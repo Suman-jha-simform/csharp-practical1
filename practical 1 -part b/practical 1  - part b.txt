@@ -1,0 +1,33 @@
+
+Application Explanation : 
+
+The application shows the concept of Exception at run time i.e FormatException.
+
+The line raising the format exception is line no 16 , inside of the if(Convert.ToBoolean(int.Parse(userResponse))) {} block.
+
+The exception happens when the user inputs string value and we are trying to parse that string value to integer. A incomplete parsing leads to the exception 
+while successful parsing like entering numerical value does not lead to an exception and executes the statement inside of the if block.
+
+We can use debugger, with the help of watch functionality to see what the exception has happened. 
+
+
+
+Handling Exception : 
+
+We can handle the runtime exception such as this one we got above using try catch block. 
+
+try {
+
+	    string userResponse = Console.ReadLine();
+
+            if (Convert.ToBoolean(int.Parse(userResponse)))
+            {
+
+                Console.WriteLine("The entered value is a integer");
+
+            }
+
+} catch(Exception ex)
+{
+	Console.WriteLine("An exception happended : {0}", ex.Message);
+}
